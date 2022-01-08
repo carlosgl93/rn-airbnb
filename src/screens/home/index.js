@@ -12,7 +12,7 @@ const HomeScreen = () => {
     <View style={styles.container}>
       <Pressable
         style={styles.searchButton}
-        onPress={() => console.warn('Search Btn clicked')}
+        onPress={() => console.warn('SEARCH BUTTON NOT WORKING')}
       >
         <AntDesign
           name='search1'
