@@ -1,4 +1,4 @@
-export default [
+export const searchResults = [
   {
     id: '0',
     description: 'Tenerife, Canary Islands',
