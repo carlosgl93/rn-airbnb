@@ -17,64 +17,33 @@ const Tab = createBottomTabNavigator();
 const HomeTabNavigator = () => {
   return (
     <Tab.Navigator
-      screenOptions={{
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === 'Explore') {
+            iconName = 'search';
+          } else if (route.name === 'Saved') {
+            iconName = 'heart';
+          } else if (route.name === 'Trips') {
+            iconName = 'airbnb';
+          } else if (route.name === 'Inbox') {
+            iconName = 'comment';
+          } else if (route.name === 'Profile') {
+            iconName = 'user';
+          }
+          return <FontAwesome5 name={iconName} size={24} color={color} />;
+        },
         headerShown: false,
         tabBarActiveTintColor: '#f15454',
-      }}
+        tabBarInactiveTintColor: 'gray',
+      })}
     >
-      <Tab.Screen
-        name='Explore'
-        component={HomeScreen}
-        options={{
-          tabBarIcon: () => {
-            <AntDesign name='search1' size={24} color='blue' />;
-          },
-        }}
-      />
-      <Tab.Screen
-        name='Saved'
-        component={SavedScreen}
-        options={{
-          tabBarIcon: () => {
-            <AntDesign name='hearto' size={24} color='black' />;
-          },
-        }}
-      />
-      <Tab.Screen
-        name='Trips'
-        component={Trips}
-        options={{
-          tabBarIcon: () => {
-            <FontAwesome5 name='airbnb' size={24} color='black' />;
-          },
-        }}
-      />
-      <Tab.Screen
-        name='Inbox'
-        component={InboxScreen}
-        options={{
-          tabBarIcon: () => {
-            <MaterialCommunityIcons
-              name='message-outline'
-              size={24}
-              color='black'
-            />;
-          },
-        }}
-      />
-      <Tab.Screen
-        name='Profile'
-        component={ProfileScreen}
-        options={{
-          tabBarIcon: () => {
-            <Ionicons
-              name='md-person-circle-outline'
-              size={24}
-              color='black'
-            />;
-          },
-        }}
-      />
+      <Tab.Screen name='Explore' component={HomeScreen} />
+      <Tab.Screen name='Saved' component={SavedScreen} />
+      <Tab.Screen name='Trips' component={Trips} />
+      <Tab.Screen name='Inbox' component={InboxScreen} />
+      <Tab.Screen name='Profile' component={ProfileScreen} />
     </Tab.Navigator>
   );
 };
