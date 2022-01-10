@@ -29,7 +29,7 @@ const Post = ({ place }) => {
           <Text style={styles.price}>${newPrice}</Text>
           <Text style={styles.perNight}>'/ night'</Text>
         </View>
-        <Text style={styles.total}>{newPrice}</Text>
+        <Text style={styles.total}>{newPrice} total price</Text>
       </View>
     </View>
   );

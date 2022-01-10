@@ -4,7 +4,7 @@ import { AntDesign } from '@expo/vector-icons';
 
 import styles from './styles';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const background = {
     uri: 'https://cdn.vox-cdn.com/thumbor/rQdP_2gdCKFQU7nPcKK8cuX2BDI=/0x0:1898x1273/1200x800/filters:focal(833x627:1135x929)/cdn.vox-cdn.com/uploads/chorus_image/image/64128012/airbnb_luxe_announcement.0.jpg',
   };
@@ -12,7 +12,7 @@ const HomeScreen = () => {
     <View style={styles.container}>
       <Pressable
         style={styles.searchButton}
-        onPress={() => console.warn('SEARCH BUTTON NOT WORKING')}
+        onPress={() => navigation.navigate('Destination Search')}
       >
         <AntDesign
           name='search1'
