@@ -1,11 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
 
+import ExploreNavigator from './exploreNavigator'
 import HomeScreen from '../../screens/home';
 import SavedScreen from '../../screens/saved';
 import Trips from '../../screens/trips';
@@ -39,7 +36,7 @@ const HomeTabNavigator = () => {
         tabBarInactiveTintColor: 'gray',
       })}
     >
-      <Tab.Screen name='Explore' component={HomeScreen} />
+      <Tab.Screen name='Explore' component={ExploreNavigator} />
       <Tab.Screen name='Saved' component={SavedScreen} />
       <Tab.Screen name='Trips' component={Trips} />
       <Tab.Screen name='Inbox' component={InboxScreen} />

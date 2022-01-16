@@ -24,18 +24,13 @@ const Router = () => {
           component={LocationSearch}
           options={{ headerShown: false }}
         />
-      </Stack.Navigator>
-
-      <Stack.Screen
+        <Stack.Screen
         name={'Guests'}
         component={GuestsScreen}
         options={{ title: 'Who is staying?' }}
       />
-      <Stack.Screen
-        name={'Home'}
-        component={HomeScreen}
-        options={{ title: 'Who is staying?' }}
-      />
+      </Stack.Navigator>
+      
     </NavigationContainer>
   );
 };
